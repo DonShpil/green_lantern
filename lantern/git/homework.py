@@ -15,7 +15,10 @@ def is_two_object_has_same_value(first: Any, second: Any) -> bool:
     If @first and @second has same value should return True
     In another case should return False
     """
-    pass
+    if first == second:
+        return True
+    else:
+        return False
 
 
 def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
@@ -23,7 +26,10 @@ def is_two_objects_has_same_type(first: Any, second: Any) -> bool:
     If @first and @second has same type should return True
     In another case should return False
     """
-    pass
+    if type(first) == type(second):
+        return True
+    else:
+        return False
 
 
 def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
@@ -31,7 +37,7 @@ def is_two_objects_is_the_same_objects(first: Any, second: Any) -> bool:
     If @first and @second has same type should return True
     In another case should return False
     """
-    pass
+    return id(first) == id(second)
 
 
 def multiple_ints(first_value: int, second_value: int) -> int:
@@ -48,7 +54,10 @@ def multiple_ints(first_value: int, second_value: int) -> int:
     Returns:
         Product of elements
     """
-    pass
+    if isinstance(first_value, int) and isinstance(second_value, int):
+        if (not isinstance(first_value, bool)) and (not isinstance(second_value, bool)):
+            return second_value * first_value
+    raise TypeError()
 
 
 def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
@@ -78,7 +87,11 @@ def multiple_ints_with_conversion(first_value: Any, second_value: Any) -> int:
             print("Not valid input data")
         >>> "Not valid input data"
     """
-    pass
+    a = int(first_value)
+    b = int(second_value)
+    if isinstance(a, int) and isinstance(b, int):
+        return a * b
+    raise ValueError()
 
 
 def is_word_in_text(word: str, text: str) -> bool:
@@ -97,14 +110,18 @@ def is_word_in_text(word: str, text: str) -> bool:
         >>> False
 
     """
-    pass
+    return word in text
 
 
 def some_loop_exercise() -> list:
     """
     Use loop to create list that contain int values from 0 to 12 except 6 and 7
     """
-    pass
+    numbers = []
+    for x in range(0, 13):
+        if x not in [6, 7]:
+            numbers.append(x)
+    return numbers
 
 
 def remove_from_list_all_negative_numbers(data: List[int]) -> list:
@@ -116,7 +133,11 @@ def remove_from_list_all_negative_numbers(data: List[int]) -> list:
         remove_from_list_all_negative_numbers([1, 5, -7, 8, -1])
         >>> [1, 5, 8]
     """
-    pass
+    new_data = list(data)
+    for x in data:
+        if x < 0:
+            new_data.remove(x)
+    return new_data
 
 
 def alphabet() -> dict:
@@ -127,7 +148,9 @@ def alphabet() -> dict:
         alphabet()
         >>> {"a": 1, "b": 2 ...}
     """
-    pass
+    return {1: 'a', 2: 'b', 3: 'c', 4: 'd', 5: 'e', 6: 'f', 7: 'g', 8: 'h', 9: 'i', 10: 'j', 11: 'k', 12: 'l',
+                    13: 'm', 14: 'n', 15: 'o', 16: 'p', 17: 'q', 18: 'r', 19: 's', 20: 't', 21: 'u', 22: 'v', 23: 'w',
+                    24: 'x', 25: 'y', 26: 'z'}
 
 
 def simple_sort(data: List[int]) -> List[list]:
@@ -137,4 +160,14 @@ def simple_sort(data: List[int]) -> List[list]:
         simple_sort([2, 9, 6, 7, 3, 2, 1])
         >>> [1, 2, 2, 3, 6, 7, 9]
     """
-    pass
+    complete = False
+    while not complete:
+        complete = True
+        list_lan = len(data)
+        for x in range(0, list_lan - 1):
+            if data[x] > data[x + 1]:
+                buf = data[x]
+                data[x] = data[x + 1]
+                data[x + 1] = buf
+                complete = False
+    return datanm
