@@ -170,4 +170,4 @@ def simple_sort(data: List[int]) -> List[list]:
                 data[x] = data[x + 1]
                 data[x + 1] = buf
                 complete = False
-    return datanm
+    return data
