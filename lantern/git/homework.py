@@ -150,7 +150,6 @@ def alphabet() -> dict:
     """
     import string
     alphabet = dict(zip(range(1, 27), string.ascii_lowercase))
-
     return alphabet
 
 
