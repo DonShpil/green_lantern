@@ -1,6 +1,6 @@
 class Cat:
     """
-    Write Class Cat which will receive age from user
+                                Write Class Cat which will receive age from user
     * Add to class average_speed variable which will get it's values
       from private method _set_average_speed()
 
